@@ -164,7 +164,6 @@ public class Hilo extends Thread {
                                         D[1] = true;
                                     }
                                 }
-                                //System.out.println(rc.getTurno() + "2" + "Seccion Critica\n\n");
                                 while(!d3 && !d4){
                                     if(rc.getTurno() == 2){
                                         D3[0] = true;
