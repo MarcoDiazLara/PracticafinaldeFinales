@@ -61,7 +61,7 @@ public class Hilo extends Thread {
                         }
                         Thread.sleep((int)(ini + Math.random() * fin));
                     }catch(Exception e){
-                        //System.out.println(e.getMessage());
+                        
                     }
                 }
             case 2:
@@ -105,7 +105,7 @@ public class Hilo extends Thread {
                                     D[0] = true;
                                 }
                             }
-                            //System.out.println(rc.getTurno() + "0" + "Seccion Critica\n\n");
+                          
                             while(!d1 && !d2){
                                 if(rc.getTurno() == 0){
                                     D2[0] = true;
