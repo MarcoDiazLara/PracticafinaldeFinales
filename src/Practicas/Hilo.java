@@ -12,6 +12,7 @@ public class Hilo extends Thread {
     private final static int fin = 200;
     private boolean dead = false;
     private Lock mutex;
+    private MutexAp Mutex;
     private int algoritmo = 0;
     private boolean H[];
     private int turno;
@@ -233,18 +234,43 @@ public class Hilo extends Thread {
                 
                 while(true){
                     try{
-                        mutex.lock();
-                        rc.setDatoCompartido(this.getName());
-                        area.append(rc.getDatoCompartido() + "\n");
-                        if(isDead()){
-                            stop();
+                         if(mutex.tryLock()){
+                         mutex.lock();
+                         rc.setDatoCompartido(this.getName());
+                             area.append(rc.getDatoCompartido()+"\n");
+                             if(isDead()){   
+                               stop();     
+                              }   
+                            mutex.unlock();
                         }
-                        mutex.unlock();
+                         else{
+                             area.append("Esperando...\n");
+                         }
                         Thread.sleep((int)(ini + Math.random() * fin));
                     }catch(Exception e){
                         System.out.println(e.getMessage());
                     }
                 }   
+                
+            case 6:
+                while(true){            
+                try{
+                
+                if(Mutex.trylock()){
+                    Mutex.lock();
+                    rc.setDatoCompartido(this.getName());
+                    area.append(rc.getDatoCompartido()+"\n");
+                    if(isDead()){   
+                        stop();  
+                    }   
+                    Mutex.unlock();
+                }
+                Thread.sleep((int) (ini + Math.random() * fin));
+            }catch(Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+    
         }
     }
     public boolean isDead() {
