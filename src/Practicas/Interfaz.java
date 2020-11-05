@@ -13,6 +13,7 @@ public class Interfaz extends javax.swing.JFrame {
         Algoritmo.add(Dekker);
         Algoritmo.add(Dijkstra);
         Algoritmo.add(mutex);
+        Algoritmo.add(MutexApi);
         cd = new Cerradura();
         rc = new RCompartido(cd);
         rc.setTurno(0);
@@ -66,6 +67,7 @@ public class Interfaz extends javax.swing.JFrame {
         Dekker = new javax.swing.JRadioButtonMenuItem();
         Dijkstra = new javax.swing.JRadioButtonMenuItem();
         mutex = new javax.swing.JRadioButtonMenuItem();
+        MutexApi = new javax.swing.JRadioButtonMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
@@ -185,13 +187,17 @@ public class Interfaz extends javax.swing.JFrame {
         });
         jMenu4.add(Dijkstra);
 
-        mutex.setText("Mutex");
+        mutex.setText(" Mutex Tradicional");
         mutex.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mutexActionPerformed(evt);
             }
         });
         jMenu4.add(mutex);
+
+        MutexApi.setSelected(true);
+        MutexApi.setText("Mutex Api");
+        jMenu4.add(MutexApi);
 
         jMenuBar1.add(jMenu4);
 
@@ -330,6 +336,12 @@ public class Interfaz extends javax.swing.JFrame {
             t2.setAlgoritmo(5);
             t3.setAlgoritmo(5);
             t4.setAlgoritmo(5);
+        }
+        if(MutexApi.isSelected()){
+            t1.setAlgoritmo(6);
+            t2.setAlgoritmo(6);
+            t3.setAlgoritmo(6);
+            t4.setAlgoritmo(6);
         }
         t1.start();
         t2.start();
@@ -483,6 +495,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem Dekker;
     private javax.swing.JRadioButtonMenuItem Dijkstra;
     private javax.swing.JButton Matar;
+    private javax.swing.JRadioButtonMenuItem MutexApi;
     private javax.swing.JRadioButtonMenuItem condicionesCompetancias;
     private javax.swing.JRadioButtonMenuItem desacInterrup;
     private javax.swing.JButton jButton3;
