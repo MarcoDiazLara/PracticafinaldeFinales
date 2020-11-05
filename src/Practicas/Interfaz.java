@@ -87,6 +87,7 @@ public class Interfaz extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 
+        Area2.setEditable(false);
         Area2.setColumns(20);
         Area2.setRows(5);
         jScrollPane6.setViewportView(Area2);
@@ -98,6 +99,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        Area3.setEditable(false);
         Area3.setColumns(20);
         Area3.setRows(5);
         jScrollPane7.setViewportView(Area3);
@@ -116,6 +118,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        Area4.setEditable(false);
         Area4.setColumns(20);
         Area4.setRows(5);
         jScrollPane8.setViewportView(Area4);
@@ -128,6 +131,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel4.setText("Plato 4");
 
+        Area1.setEditable(false);
         Area1.setColumns(20);
         Area1.setRows(5);
         jScrollPane5.setViewportView(Area1);
